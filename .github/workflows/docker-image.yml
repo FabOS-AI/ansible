@@ -18,5 +18,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Build the Docker image
+    - name: Build Docker image
       run: docker build . --file Dockerfile --tag ${{env.DOCKER_IMAGE_REPOSITORY}}:${{env.DOCKER_IMAGE_TAG}}
+    - name: Publish Docker image to registry
+      uses: elgohr/Publish-Docker-Github-Action@v4
+      with:
+        name: ${{env.DOCKER_IMAGE_REPOSITORY}}:${{env.DOCKER_IMAGE_TAG}}
+        username: ${{ secrets.DOCKER_REGISTRY_USERNAME }}
+        password: ${{ secrets.DOCKER_REGISTRY_PASSWORD }}
