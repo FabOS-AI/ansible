@@ -1,0 +1,22 @@
+name: Docker Image CI
+
+env:
+  DOCKER_IMAGE_REPOSITORY: fabos4ai/ansible-core
+  DOCKER_IMAGE_TAG: 2.11.9
+  
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag ${{env.DOCKER_IMAGE_REPOSITORY}}:${{env.DOCKER_IMAGE_TAG}}
