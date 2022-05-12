@@ -1,9 +1,9 @@
-name: Docker Image CI
+name: Docker Image
 
 env:
   DOCKER_IMAGE_REPOSITORY: fabos4ai/ansible-core
   DOCKER_IMAGE_TAG: 2.11.9
-  
+
 on:
   push:
     branches: [ main ]
