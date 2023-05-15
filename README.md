@@ -1,12 +1,1 @@
-# Ansible
-
-Docker image with [ansible-core](https://docs.ansible.com/ansible-core/devel/index.html) installed. It can be used as base image for containers providing Ansible automations.
-
-Docker Hub: [fabos4ai/ansible-core](https://hub.docker.com/repository/docker/fabos4ai/ansible-core)
-
-An example can be found in the `example` directory:
-
-```
-docker build -t ansible-example .
-docker run ansible-example
-```
+The Service Lifecycle Management was transferred to the  [Eclipse Service Lifecycle Management](https://projects.eclipse.org/projects/dt.slm) project at the Eclipse Foundation. Therefore, this repository was transferred to the new repository [eclipse-slm/ansible](https://github.com/eclipse-slm/ansible) and set to archived.
